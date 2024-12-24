@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		991552DC2D1A725400259074 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 991552DB2D1A725400259074 /* SnapKit */; };
+		9915532A2D1A870200259074 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 991553292D1A870200259074 /* RxBlocking */; };
+		9915532C2D1A870200259074 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532B2D1A870200259074 /* RxBlocking-Dynamic */; };
+		9915532E2D1A870200259074 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532D2D1A870200259074 /* RxCocoa */; };
+		991553302D1A870200259074 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532F2D1A870200259074 /* RxCocoa-Dynamic */; };
+		991553322D1A870200259074 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 991553312D1A870200259074 /* RxRelay */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		991552302D197D7A00259074 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -48,16 +57,6 @@
 			path = NetflixClone;
 			sourceTree = "<group>";
 		};
-		991552322D197D7A00259074 /* NetflixCloneTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NetflixCloneTests;
-			sourceTree = "<group>";
-		};
-		9915523C2D197D7A00259074 /* NetflixCloneUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NetflixCloneUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +64,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991553322D1A870200259074 /* RxRelay in Frameworks */,
+				9915532C2D1A870200259074 /* RxBlocking-Dynamic in Frameworks */,
+				991553302D1A870200259074 /* RxCocoa-Dynamic in Frameworks */,
+				991552DC2D1A725400259074 /* SnapKit in Frameworks */,
+				9915532E2D1A870200259074 /* RxCocoa in Frameworks */,
+				9915532A2D1A870200259074 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				9915521B2D197D7A00259074 /* NetflixClone */,
-				991552322D197D7A00259074 /* NetflixCloneTests */,
-				9915523C2D197D7A00259074 /* NetflixCloneUITests */,
 				9915521A2D197D7A00259074 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +128,12 @@
 			);
 			name = NetflixClone;
 			packageProductDependencies = (
+				991552DB2D1A725400259074 /* SnapKit */,
+				991553292D1A870200259074 /* RxBlocking */,
+				9915532B2D1A870200259074 /* RxBlocking-Dynamic */,
+				9915532D2D1A870200259074 /* RxCocoa */,
+				9915532F2D1A870200259074 /* RxCocoa-Dynamic */,
+				991553312D1A870200259074 /* RxRelay */,
 			);
 			productName = NetflixClone;
 			productReference = 991552192D197D7A00259074 /* NetflixClone.app */;
@@ -142,9 +151,6 @@
 			);
 			dependencies = (
 				991552312D197D7A00259074 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				991552322D197D7A00259074 /* NetflixCloneTests */,
 			);
 			name = NetflixCloneTests;
 			packageProductDependencies = (
@@ -165,9 +171,6 @@
 			);
 			dependencies = (
 				9915523B2D197D7A00259074 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9915523C2D197D7A00259074 /* NetflixCloneUITests */,
 			);
 			name = NetflixCloneUITests;
 			packageProductDependencies = (
@@ -208,6 +211,10 @@
 			);
 			mainGroup = 991552102D197D7A00259074;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				991552DA2D1A725400259074 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9915521A2D197D7A00259074 /* Products */;
 			projectDirPath = "";
@@ -294,9 +301,9 @@
 				INFOPLIST_FILE = NetflixClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,9 +329,9 @@
 				INFOPLIST_FILE = NetflixClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,6 +576,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		991552DA2D1A725400259074 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		991552DB2D1A725400259074 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991552DA2D1A725400259074 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		991553292D1A870200259074 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		9915532B2D1A870200259074 /* RxBlocking-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxBlocking-Dynamic";
+		};
+		9915532D2D1A870200259074 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		9915532F2D1A870200259074 /* RxCocoa-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxCocoa-Dynamic";
+		};
+		991553312D1A870200259074 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 991552112D197D7A00259074 /* Project object */;
 }
