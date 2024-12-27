@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>APIKey</key>
-	<string>Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NzMwZjliYTk4YjA4ZGIyZDIyOTdmZDM2MWUyODZkZSIsIm5iZiI6MTczNDA2MzgyMy4zNDYsInN1YiI6IjY3NWJiNmNmNWFjYzU2MDQ0Mjg4ZjMzZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FnqOgEtvM3Ul1GRoYlFzFzuIuiofw7dq40Uo-HLDlZM</string>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NzMwZjliYTk4YjA4ZGIyZDIyOTdmZDM2MWUyODZkZSIsIm5iZiI6MTczNDA2MzgyMy4zNDYsInN1YiI6IjY3NWJiNmNmNWFjYzU2MDQ0Mjg4ZjMzZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FnqOgEtvM3Ul1GRoYlFzFzuIuiofw7dq40Uo-HLDlZM</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

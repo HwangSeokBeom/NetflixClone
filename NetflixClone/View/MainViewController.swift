@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import AVKit
+import AVFoundation
 
 final class MainViewController: UIViewController {
     
@@ -36,7 +38,16 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        bind()
+        configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     private func bind() {
@@ -78,8 +89,8 @@ final class MainViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // 각 그룹은 화면 넓이는 25%를 차지하고, 높이는 넓이의 40%
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25),
-                                               heightDimension: .fractionalHeight(0.4))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
+                                               heightDimension: .fractionalHeight(0.3))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
@@ -88,7 +99,19 @@ final class MainViewController: UIViewController {
         section.interGroupSpacing = 10
         section.contentInsets = .init(top: 10, leading: 10, bottom: 20, trailing: 10)
         
-        return UICollectionViewLayout()
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(44)
+        )
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        section.boundarySupplementaryItems = [header]
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
     private func configureUI() {
@@ -104,6 +127,21 @@ final class MainViewController: UIViewController {
             make.top.equalTo(label.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide.snp.horizontalEdges)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+    }
+    
+    private func playVideoUrl() {
+        
+        let url = URL(string: "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4")!
+        
+        let player = AVPlayer(url: url)
+        
+        let playerViewController = AVPlayerViewController()
+        
+        playerViewController.player = player
+        
+        present(playerViewController, animated: true) {
+            player.play()
         }
     }
 }
@@ -166,4 +204,46 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         return headerView
     }
     
+    // collectionView의 섹션이 몇 개인지를 설정하는 메서드
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return Section.allCases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch Section(rawValue: indexPath.section) {
+        case .popularMovies:
+            viewModel.fetchTrailerKey(movie: popularMovies[indexPath.row])
+                .observe(on: MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] key in
+                    // 만약 유효한 url 을 서버로부터 받았을 경우 이 url 을 그대로 사용했을 것입니다.
+                    //                     let url = URL(string: "https://www.youtube.com/watch?v=\(key)")!
+                    //                     self?.playVideoUrl(url: url)
+                    print(key)
+                    self?.navigationController?.pushViewController(YouTubePlayerViewController(key: key), animated: true)
+                }, onFailure: { error in
+                    print("에러 발생: \(error)")
+                }).disposed(by: disposeBag)
+            
+        case .topRatedMovies:
+            viewModel.fetchTrailerKey(movie: topRatedMovies[indexPath.row])
+                .observe(on: MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] key in
+                    self?.navigationController?.pushViewController(YouTubePlayerViewController(key: key), animated: true)
+                }, onFailure: { error in
+                    print("에러 발생: \(error)")
+                }).disposed(by: disposeBag)
+            
+        case .upcomingMovies:
+            viewModel.fetchTrailerKey(movie: upcomingMovies[indexPath.row])
+                .observe(on: MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] key in
+                    self?.navigationController?.pushViewController(YouTubePlayerViewController(key: key), animated: true)
+                }, onFailure: { error in
+                    print("에러 발생: \(error)")
+                }).disposed(by: disposeBag)
+            
+        case .none:
+            break
+        }
+    }
 }

@@ -2,12 +2,13 @@
 //  Movie.swift
 //  NetflixClone
 //
-//  Created by Hsb on 12/23/24.
+//  Created by 내일배움캠프 on 12/23/24.
 //
 
 import Foundation
 
 struct MovieResponse: Decodable {
+    typealias Element = Movie
     let results: [Movie]
 }
 

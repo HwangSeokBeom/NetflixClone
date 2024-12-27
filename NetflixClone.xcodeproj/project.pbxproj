@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		991552DC2D1A725400259074 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 991552DB2D1A725400259074 /* SnapKit */; };
-		9915532A2D1A870200259074 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 991553292D1A870200259074 /* RxBlocking */; };
-		9915532C2D1A870200259074 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532B2D1A870200259074 /* RxBlocking-Dynamic */; };
-		9915532E2D1A870200259074 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532D2D1A870200259074 /* RxCocoa */; };
-		991553302D1A870200259074 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9915532F2D1A870200259074 /* RxCocoa-Dynamic */; };
-		991553322D1A870200259074 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 991553312D1A870200259074 /* RxRelay */; };
+		9915533D2D1AC40400259074 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9915533C2D1AC40400259074 /* RxCocoa */; };
+		9915533F2D1AC40400259074 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9915533E2D1AC40400259074 /* RxRelay */; };
+		991553412D1AC40400259074 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 991553402D1AC40400259074 /* RxSwift */; };
+		991553482D1D47C800259074 /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 991553472D1D47C800259074 /* YouTubeiOSPlayerHelper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +30,19 @@
 			remoteInfo = NetflixClone;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		991553342D1AC28200259074 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		991552192D197D7A00259074 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,12 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991553322D1A870200259074 /* RxRelay in Frameworks */,
-				9915532C2D1A870200259074 /* RxBlocking-Dynamic in Frameworks */,
-				991553302D1A870200259074 /* RxCocoa-Dynamic in Frameworks */,
+				9915533D2D1AC40400259074 /* RxCocoa in Frameworks */,
 				991552DC2D1A725400259074 /* SnapKit in Frameworks */,
-				9915532E2D1A870200259074 /* RxCocoa in Frameworks */,
-				9915532A2D1A870200259074 /* RxBlocking in Frameworks */,
+				991553412D1AC40400259074 /* RxSwift in Frameworks */,
+				9915533F2D1AC40400259074 /* RxRelay in Frameworks */,
+				991553482D1D47C800259074 /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +129,7 @@
 				991552152D197D7A00259074 /* Sources */,
 				991552162D197D7A00259074 /* Frameworks */,
 				991552172D197D7A00259074 /* Resources */,
+				991553342D1AC28200259074 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,11 +141,10 @@
 			name = NetflixClone;
 			packageProductDependencies = (
 				991552DB2D1A725400259074 /* SnapKit */,
-				991553292D1A870200259074 /* RxBlocking */,
-				9915532B2D1A870200259074 /* RxBlocking-Dynamic */,
-				9915532D2D1A870200259074 /* RxCocoa */,
-				9915532F2D1A870200259074 /* RxCocoa-Dynamic */,
-				991553312D1A870200259074 /* RxRelay */,
+				9915533C2D1AC40400259074 /* RxCocoa */,
+				9915533E2D1AC40400259074 /* RxRelay */,
+				991553402D1AC40400259074 /* RxSwift */,
+				991553472D1D47C800259074 /* YouTubeiOSPlayerHelper */,
 			);
 			productName = NetflixClone;
 			productReference = 991552192D197D7A00259074 /* NetflixClone.app */;
@@ -214,6 +225,7 @@
 			packageReferences = (
 				991552DA2D1A725400259074 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				991553462D1D47C800259074 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9915521A2D197D7A00259074 /* Products */;
@@ -594,6 +606,14 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		991553462D1D47C800259074 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -602,30 +622,25 @@
 			package = 991552DA2D1A725400259074 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		991553292D1A870200259074 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		9915532B2D1A870200259074 /* RxBlocking-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxBlocking-Dynamic";
-		};
-		9915532D2D1A870200259074 /* RxCocoa */ = {
+		9915533C2D1AC40400259074 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		9915532F2D1A870200259074 /* RxCocoa-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxCocoa-Dynamic";
-		};
-		991553312D1A870200259074 /* RxRelay */ = {
+		9915533E2D1AC40400259074 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
+		};
+		991553402D1AC40400259074 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553282D1A870200259074 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		991553472D1D47C800259074 /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991553462D1D47C800259074 /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

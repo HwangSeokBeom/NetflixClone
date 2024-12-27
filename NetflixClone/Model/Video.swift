@@ -8,6 +8,7 @@
 import Foundation
 
 struct VideoResponse: Decodable {
+    typealias Element = Video
     let results: [Video]
 }
 
